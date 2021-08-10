@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Router } from '@reach/router';
+import Header from './components/header/Header';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
     <header className="App-header">
 
     <Router>
-      
+      <Header path="/"/>
 
 
    </Router>
