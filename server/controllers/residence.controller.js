@@ -10,10 +10,10 @@ module.exports.createResidence = (request, response) => {
             destanceFromUniversity,
             address,location,images } = request.body;
             Residence.create({
-                  name,price,rooms,
-                  balcones,description,state,
-                  destanceFromUniversity,
-                  address,location,images
+            name,price,rooms,
+            balcones,description,state,
+            destanceFromUniversity,
+            address,location,images
     })
         .then(Residence => response.json(Residence))
         .catch(err => response.status(400).json(err));
