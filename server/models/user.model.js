@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const residence=require('./residence.model')
+require('./residence.model')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please enter your password!"]
     },
     
-    residence:[residence]
+    residence:[{type:mongoose.Schema.Types.ObjectId, ref:'residence'}]
    
 }, {
     timestamps: true
