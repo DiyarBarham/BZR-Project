@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Router } from "@reach/router";
 import SearchBar from "material-ui-search-bar";
+import Header from './components/header/Header';
 
 function App() {
 
@@ -11,7 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Router></Router>
+        <Router>
+        <Header path="/"/>
+        </Router>
         <SearchBar
       onChange={() => console.log('onChange')}
       onRequestSearch={() => console.log('onRequestSearch')}
