@@ -22,9 +22,9 @@ const Header = () => {
         <div className={classes.root}>
         <AppBar style={{backgroundColor:"cadetblue"}} position="static">
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">Menu
               
-            </IconButton>
+            </IconButton> */}
             <Typography variant="h6" className={classes.title}>
             <img src={process.env.PUBLIC_URL +"/Logo.png" } width="150px" height="80px" alt="Logo" style={{float:"left"}} />
 
