@@ -26,6 +26,12 @@ module.exports.getResidence =(request,response) => {
   .catch(err => response.json(err))
 }
 
+module.exports.findResidencebyLocation =(request,response) => {
+  Residence.find({location: { $regex: '.*'+request.params.location+'.*' }})
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
+
 
 
 module.exports.getAllResidence = (request, response) => {
