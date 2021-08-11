@@ -7,7 +7,11 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from '@reach/router';
 import Hero from '../Hero/Hero';
-import './header.css'    
+import './header.css'   
+import Serchbar from './Serchbar';
+import Card from '../../Card/Card';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,9 +32,10 @@ const Header = () => {
         slidesToScroll: 1
       };
     return (
+        <>
     
         <div className="main-page">
-        <AppBar style={{backgroundColor:"cadetblue"}} position="static">
+        <AppBar style={{backgroundColor:"cadetblue",borderRadius:"10px"}} position="static">
           <Toolbar>
             <IconButton  edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               
@@ -43,13 +48,18 @@ const Header = () => {
             <Button color="inherit">Register</Button>
 
           </Toolbar>
+          
         </AppBar> 
+          
+        <Hero/>
 
-          <Hero/>
            
         
         
       </div>
+      
+      
+      </>
     )
 }
 

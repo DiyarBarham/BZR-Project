@@ -359,7 +359,9 @@ const BackgroundAnimation = () => (
         </linearGradient>
       </defs>
     </svg>
+    
   </div>
+  
 );
 
 export default BackgroundAnimation;
