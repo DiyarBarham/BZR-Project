@@ -31,9 +31,45 @@ module.exports.findResidencebyLocation =(request,response) => {
   .then(Residence =>response.json(Residence))
   .catch(err => response.json(err))
 }
+module.exports.getResidencebydistance =(request,response) => {
+  Residence.find({destanceFromUniversity:request.params.distance}) 
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
 
+module.exports.getResidencebygender =(request,response) => { 
+  //console.log(request.params.gender) 
+  Residence.find({gender:"male"})
+  .then(r => response.json(r))
+  .catch(err => response.json(err))
+}
 
+module.exports.getResidencebyprice =(request,response) => {
+  Residence.find({price:request.params.price}) 
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
 
+module.exports.getResidencebypriceandgender =(request,response) => {
+  Residence.find({price:request.params.price, gender:request.params.gender}) 
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
+module.exports.getResidencebypriceanddistance =(request,response) => {
+  Residence.find({price:request.params.price, destanceFromUniversity:request.params.distance}) 
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
+module.exports.getResidencebydistanceandgender =(request,response) => {
+  Residence.find({destanceFromUniversity:request.params.distance, gender:request.params.gender}) 
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
+module.exports.getResidencebydistanceandgenderandprice =(request,response) => {
+  Residence.find({destanceFromUniversity:request.params.distance, gender:request.params.gender, price:request.params.price}) 
+  .then(Residence =>response.json(Residence))
+  .catch(err => response.json(err))
+}
 module.exports.getAllResidence = (request, response) => {
   Residence.find({})
         .then(Residence => response.json(Residence))

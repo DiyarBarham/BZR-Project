@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Navbar from './Components/Navbar';
 import Login from './Components/Login';
@@ -28,6 +29,37 @@ function App() {
       <PrivateRoute path="/admin" roles={["admin"]} component={Admin}/>
     </Router>
    
+=======
+import React from "react";
+import "./App.css";
+import { Router } from "@reach/router";
+import Header from './components/header/Header';
+import Searchbar from './components/searchbar';
+import Card from './Card/Card';
+function App() {
+
+ 
+  return (
+    <div className="App">
+
+
+    <header className="App-header">
+
+    <Router>
+      <Header path="/"/>
+      <Card path="card"/>
+   </Router>
+   
+      
+     
+     
+       
+
+
+    </header>
+    </div>
+
+>>>>>>> 0cf08e31a99c2d7f29d8896dff441702743e4c73
   );
 }
 
