@@ -45,6 +45,7 @@ module.exports.register = (request, res) => {
 }
 
 module.exports.login = async (req, res) => {
+    console.log(req.body.email)
     const user = await User.findOne({ email: req.body.email })
     .catch(err => res.status(400).json(err));
     if (user === null) {

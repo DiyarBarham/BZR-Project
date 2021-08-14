@@ -1,17 +1,18 @@
 import React from 'react'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import { navigate } from '@reach/router';
+import axios from 'axios';
 import Hero from '../Hero/Hero';
 import './header.css'   
 import Serchbar from './Serchbar';
 import Card from '../../Card/Card';
-import { Link } from '@reach/router'
+import Cookies from 'js-cookie';
+import { Link, navigate } from '@reach/router'
  
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,10 +25,18 @@ const useStyles = makeStyles((theme) => ({
   }));
 const Header = () => {
     const classes = useStyles();
-    // useEffect(()=>{
-    //   navigate('/reg')
-    // },[]);
+    const [loggedin, setLoggedin] = useState(false);
+    const [loggedout, setLoggedout] = useState(false);
 
+    useEffect(()=>{
+      const mycookie = Cookies.get('user');
+      if(mycookie == null){
+        setLoggedout(true);
+      }else{
+        setLoggedin(true);
+      }
+      
+    },[]);
     const settings = {
         dots: true,
         infinite: true,
@@ -35,6 +44,13 @@ const Header = () => {
         slidesToShow: 1,
         slidesToScroll: 1
       };
+      const logg = e =>{
+        axios.get('http://localhost:8000/api/user/logout')
+        .then(res => {
+          Cookies.remove('user')
+          navigate('/login')
+        })
+      }
     return (
         <>
     
@@ -46,10 +62,11 @@ const Header = () => {
             </IconButton> 
             <Typography variant="h6" className={classes.title}>
             <Link to="/"> <img src={process.env.PUBLIC_URL +"/Logo.png" } width="150px" height="80px" alt="Logo" style={{float:"left"}} /></Link>
-
+            
+            
             </Typography> 
-               <Link to="login" style={{textDecoration:"none",color:"black"}}>  <Button  >Login</Button></Link>
-               <Link to="login" style={{textDecoration:"none",color:"whitesmoke"}}>  <Button color="inherit">Register</Button> </Link>
+            {loggedout && <Link to="/login" style={{textDecoration:"none",color:"black"}}>  <Button  >Login</Button></Link>}
+            {loggedin && <Button  onClick={logg}>logout</Button>}   
 
           </Toolbar>
           

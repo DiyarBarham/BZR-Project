@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import {Cookies} from 'js-cookie';
+import Cookies from 'js-cookie';
 import axios from 'axios';
 import {navigate} from '@reach/router';
 const Login=({handleChange})=>{
@@ -31,8 +31,8 @@ const Login=({handleChange})=>{
                     <h2>Sign In</h2>
                 </Grid>
                 <form onSubmit={onSubmit}>
-                <TextField label='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.value)} fullWidth required/>
-                <TextField label='Password' placeholder='Enter password' type='password' value={password} onChange={e => setPassword(e.value)} fullWidth required/>
+                <TextField label='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.target.value)} fullWidth required/>
+                <TextField label='Password' placeholder='Enter password' type='password' value={password} onChange={e => setPassword(e.target.value)} fullWidth required/>
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
                 </form>
                 <Typography > Do you have an account ?
