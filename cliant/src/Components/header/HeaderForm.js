@@ -41,7 +41,7 @@ const HeaderForm = () => {
               
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-            <img src={process.env.PUBLIC_URL +"/Logo.png" } width="150px" height="80px" alt="Logo" style={{float:"left"}} />
+            <Link to="/"><img src={process.env.PUBLIC_URL +"/Logo.png" } width="150px" height="80px" alt="Logo" style={{float:"left"}} /> </Link>
 
             </Typography> 
             <Button >Login</Button>

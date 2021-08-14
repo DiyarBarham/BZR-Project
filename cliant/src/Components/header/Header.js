@@ -11,9 +11,8 @@ import Hero from '../Hero/Hero';
 import './header.css'   
 import Serchbar from './Serchbar';
 import Card from '../../Card/Card';
-
-
-
+import { Link } from '@reach/router'
+ 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -46,11 +45,11 @@ const Header = () => {
               
             </IconButton> 
             <Typography variant="h6" className={classes.title}>
-            <img src={process.env.PUBLIC_URL +"/Logo.png" } width="150px" height="80px" alt="Logo" style={{float:"left"}} />
+            <Link to="/"> <img src={process.env.PUBLIC_URL +"/Logo.png" } width="150px" height="80px" alt="Logo" style={{float:"left"}} /></Link>
 
             </Typography> 
-            <Button >Login</Button>
-            <Button color="inherit">Register</Button>
+               <Link to="login" style={{textDecoration:"none",color:"black"}}>  <Button  >Login</Button></Link>
+               <Link to="login" style={{textDecoration:"none",color:"whitesmoke"}}>  <Button color="inherit">Register</Button> </Link>
 
           </Toolbar>
           

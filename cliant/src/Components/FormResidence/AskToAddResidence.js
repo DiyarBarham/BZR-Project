@@ -6,7 +6,7 @@ const AskToAddResidence = () => {
     return (
         <div >
             <p style={{color:"whitesmoke"}}>Are You Have A Resiedncd to Show ? ?</p>
-             <Link to="/fromResidnce"> <Button style={{backgroundColor:"white"}} > Click Here </Button> </Link>
+             <Link to="/fromResidnce" style={{textDecoration:"none",color:"whitesmoke"}}> <Button style={{backgroundColor:"white"}} > Click Here </Button> </Link>
         </div>
     )
 }
