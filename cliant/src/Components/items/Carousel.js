@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Carousel.css';
 import { items } from './Data';
 import { ReactComponent as ArrowLeft } from './left-arrow.svg';
@@ -19,10 +19,15 @@ class Carousel extends React.Component {
         this.getLength = this.getLength.bind(this);
         this.activatePreviousSlide = this.activatePreviousSlide.bind(this);
         this.activateNextSlide = this.activateNextSlide.bind(this);
+        
     }
+    
+        
+
     componentDidMount() { // gets index of active card from imported data and sets state
         let length = this.getLength();
         for (var i = 0; i < length; i++) {
+            
             if (items[i].status === 'active') {
                 this.setState({
                     leftCard: i - 1,
@@ -32,6 +37,12 @@ class Carousel extends React.Component {
                 });
             }
         }
+        this.setState({
+                        leftCard: 0,
+                        activeIndex: 1,
+                        rightCard: 2,
+                        arrayLength: length
+                    });
     }
     getLength() { // calculating length of imported array
         let length = 0;
@@ -69,6 +80,7 @@ class Carousel extends React.Component {
             rightCard: rightIndex
         })
     }
+    
     render() {
         var trackerArray = [];
         for (var i = 0; i < this.state.arrayLength; i++) {
@@ -80,6 +92,7 @@ class Carousel extends React.Component {
             }
 
         }
+        
         return (
             <div className="carousel-container">
                 <div className="cards">
@@ -121,6 +134,7 @@ class Carousel extends React.Component {
             </div>
         )
     }
+    
 }
 
 export default Carousel;

@@ -5,7 +5,7 @@ import MainForm from "./components/FormResidence/MainForm";
 import Apartment from './components/apartment';
 import Form from './components/Form';
 import SignInOutContainer from './containers';
-
+import Car from './components/items/Car'
 function App() {
 
   
@@ -14,9 +14,9 @@ function App() {
       {/* <Navbar/> */}
       <Form path='/reg'/>
       <Header path="/"/>
-      <Apartment path="/apartment"/>
+      <Apartment path="/apartment/:id" />
       <MainForm  path='/fromResidnce' />
-      
+      <Car path='/car'/>
       <SignInOutContainer path="/login"/>
     </Router>
   )
