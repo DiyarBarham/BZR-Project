@@ -2,8 +2,13 @@ import React from "react";
 import "./App.css";
 import { Router } from "@reach/router";
 import Header from './components/header/Header';
-import Serchbar from "./components/header/Serchbar";
-import Card  from "./Card/Card";
+import MainForm from "./components/FormResidence/MainForm";
+
+
+
+
+
+
 function App() {
 
  
@@ -15,7 +20,8 @@ function App() {
 
     <Router>
       <Header path="/"/>
-      <Card path="card"/>
+      <MainForm  path='/fromResidnce' />
+      
    </Router>
    
       

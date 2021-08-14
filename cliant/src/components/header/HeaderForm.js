@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
     },
   }));
-const Header = () => {
+const HeaderForm = () => {
     const classes = useStyles();
     const settings = {
         dots: true,
@@ -51,7 +51,7 @@ const Header = () => {
           
         </AppBar> 
           
-        <Hero/>
+       
         
 
            
@@ -64,4 +64,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default HeaderForm
