@@ -1,10 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Register from './components/Register';
-import Admin  from './components/Admin';
 import {Router} from '@reach/router';
-import { useContext } from 'react';
 import Header from './components/header/Header';
 import MainForm from "./components/FormResidence/MainForm";
 

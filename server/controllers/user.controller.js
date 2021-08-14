@@ -25,6 +25,7 @@ module.exports.getAll = (request, response) => {
 
 
 module.exports.register = (request, res) => {
+    console.log(request.body)
     User.create(request.body)
         .then(user => {
             console.log("44444444444")
@@ -39,6 +40,7 @@ module.exports.register = (request, res) => {
         })
         .catch(err =>{ res.status(400).json(err)
             console.log(err);
+            console.log(".000.0.0.0.0.0.")
         });
 }
 
