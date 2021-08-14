@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
-import './cards.css'
+import '../Card/cards.css'
 import Header from '../components/header/Header'
 import Serchbar from '../components/header/Serchbar';
 import SortByOptions from '../components/header/Select';

@@ -1,9 +1,10 @@
+const UserController = require("../controllers/user.controller");
 
-const UserController = require('../controllers/user.controller');
-module.exports = function(app){
-    app.post('/api/user/new', UserController.createNewUser);
-    app.get('/api/user/all',UserController.findAllUsers);
-    app.get('/api/user/:id/find', UserController.findOneSingleUser);
-    app.put('/api/user/:id/update', UserController.updateExistingUser);
-
-}
+module.exports = function (app) {
+  app.put("/api/user/:id/update", UserController.updateExistingUser);
+  app.post("/api/user/register", UserController.register);
+  app.post("/api/user/login", UserController.login);
+  app.get("/api/users", UserController.getAll);
+  app.get("/api/get/:id", UserController.findUser);
+  app.get("/api/user/logout", UserController.logout);
+};

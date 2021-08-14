@@ -6,6 +6,7 @@ const ResidenceSchema = mongoose.Schema({
     rooms: { type: Number, 'default': '' },
     balcones: { type: Number, 'default': '' },
     description: { type: String, 'default': '' },
+    gender: { type: String, 'default': 'male' },
     destanceFromUniversity: { type: Number, 'default': '' },
     state:{type:Boolean,'default': false},
     address: { type: String, 'default': '' },
