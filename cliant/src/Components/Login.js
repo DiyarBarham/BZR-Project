@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import {Cookies} from 'js-cookie';
 import axios from 'axios';
+import {navigate} from '@reach/router';
 const Login=({handleChange})=>{
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,10 +16,11 @@ const Login=({handleChange})=>{
         e.preventDefault();
         axios.post('http://localhost:8000/api/user/login', {email, password})
         .then( res => {
-            console.log(res.user)
+            Cookies.set('user', res.data.user)
+            navigate('/')
         })
         .catch(err => {
-
+            console.log(err)
         })
     }
     return(
@@ -30,7 +31,7 @@ const Login=({handleChange})=>{
                     <h2>Sign In</h2>
                 </Grid>
                 <form onSubmit={onSubmit}>
-                <TextField label='Username' placeholder='Enter username' value={email} onChange={e => setEmail(e.value)} fullWidth required/>
+                <TextField label='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.value)} fullWidth required/>
                 <TextField label='Password' placeholder='Enter password' type='password' value={password} onChange={e => setPassword(e.value)} fullWidth required/>
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
                 </form>

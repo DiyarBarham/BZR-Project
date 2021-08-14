@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 import '../Card/cards.css'
 import Header from '../components/header/Header'
-
+import Serchbar from '../components/header/Serchbar';
+import SortByOptions from '../components/header/Select';
 
 class Card extends Component {
     static get CONTAINER_STYLE() {
@@ -34,9 +35,9 @@ class Card extends Component {
     }
   
     render() {
-      return (
+      return (<>
         <div style={Card.CONTAINER_STYLE}>
-          <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
+          <ReactCardCarousel autoplay={true} autoplay_speed={3000}>
             <div style={Card.CARD_STYLE}>First Card</div>
             <div style={Card.CARD_STYLE}>Second Card</div>
             <div style={Card.CARD_STYLE}>Third Card</div>
@@ -44,6 +45,8 @@ class Card extends Component {
             <div style={Card.CARD_STYLE}>Fifth Card</div>
           </ReactCardCarousel>
         </div>
+
+         </>
       );
     }
   }
