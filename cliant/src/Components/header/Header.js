@@ -1,11 +1,12 @@
 import React from 'react'
+import {useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from '@reach/router';
+import { navigate } from '@reach/router';
 import Hero from '../Hero/Hero';
 import './header.css'   
 import Serchbar from './Serchbar';
@@ -24,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
   }));
 const Header = () => {
     const classes = useStyles();
+    // useEffect(()=>{
+    //   navigate('/reg')
+    // },[]);
+
     const settings = {
         dots: true,
         infinite: true,

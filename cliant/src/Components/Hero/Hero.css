@@ -1,2 +1,11 @@
 
-
+.Hero{
+    background-color: #3d2e1a;
+    min-height: 125vh;
+ 
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+ 
+  color: rgb(0, 0, 0);
+}

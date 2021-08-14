@@ -1,56 +1,45 @@
-import React, {useState,useContext} from 'react';
-import AuthService from '../Services/AuthService';
-import Message from '../Components/Message';
-import {AuthContext} from '../Context/AuthContext';
+import React from 'react'
+import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+const Login=({handleChange})=>{
 
-const Login = props=>{
-    const [user,setUser] = useState({username: "", password : ""});
-    const [message,setMessage] = useState(null);
-    const authContext = useContext(AuthContext);
-
-    const onChange = e =>{
-        setUser({...user,[e.target.name] : e.target.value});
-    }
-
-    const onSubmit = e =>{
-        e.preventDefault();
-        AuthService.login(user).then(data=>{
-            console.log(data);
-            const { isAuthenticated,user,message} = data;
-            if(isAuthenticated){
-                authContext.setUser(user);
-                authContext.setIsAuthenticated(isAuthenticated);
-                props.history.push('/todos');
-            }
-            else
-                setMessage(message);
-        });
-    }
-
-
-
+    const paperStyle={padding :20,height:'73vh',width:300, margin:"0 auto"}
+    const avatarStyle={backgroundColor:'#1bbd7e'}
+    const btnstyle={margin:'8px 0'}
     return(
-        <div>
-            <form onSubmit={onSubmit}>
-                <h3>Please sign in</h3>
-                <label htmlFor="username" className="sr-only">Username: </label>
-                <input type="text" 
-                       name="username" 
-                       onChange={onChange} 
-                       className="form-control" 
-                       placeholder="Enter Username"/>
-                <label htmlFor="password" className="sr-only">Password: </label>
-                <input type="password" 
-                       name="password" 
-                       onChange={onChange} 
-                       className="form-control" 
-                       placeholder="Enter Password"/>
-                <button className="btn btn-lg btn-primary btn-block" 
-                        type="submit">Log in </button>
-            </form>
-            {message ? <Message message={message}/> : null}
-        </div>
+        <Grid>
+            <Paper  style={paperStyle}>
+                <Grid align='center'>
+                     <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
+                    <h2>Sign In</h2>
+                </Grid>
+                <TextField label='Username' placeholder='Enter username' fullWidth required/>
+                <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
+                <FormControlLabel
+                    control={
+                    <Checkbox
+                        name="checkedB"
+                        color="primary"
+                    />
+                    }
+                    label="Remember me"
+                 />
+                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
+                <Typography >
+                     <Link href="#" >
+                        Forgot password ?
+                </Link>
+                </Typography>
+                <Typography > Do you have an account ?
+                     <Link href="#" onClick={()=>handleChange("event",1)} >
+                        Sign Up 
+                </Link>
+                </Typography>
+            </Paper>
+        </Grid>
     )
 }
 
-export default Login;
+export default Login

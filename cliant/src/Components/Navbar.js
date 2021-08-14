@@ -1,18 +1,28 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
-import AuthService from '../Services/AuthService';
-import { AuthContext } from '../Context/AuthContext';
-
+import { navigate } from '@reach/router'
+import axios from 'axios';
 const Navbar = props =>{
-    const {isAuthenticated,user,setIsAuthenticated,setUser} = useContext(AuthContext);
+    const {isAuthenticated,user,setIsAuthenticated,setUser} = useContext();
     
     const onClickLogoutHandler = ()=>{
-        AuthService.logout().then(data=>{
-            if(data.success){
+        // AuthService.logout().then(data=>{
+        //     console.log(data);
+        //     if(data.success){
+        //         console.log("2222222222222222222222222")
+        //         setUser(data.user);
+        //         setIsAuthenticated(false);
+        //         navigate('/success');
+        //     }
+        // });
+        console.log("hussssssaineeeee")
+        axios.get('http://localhost:8000/api/logout')
+            .then(data=> {
+                console.log("mohamoudddddd")
                 setUser(data.user);
                 setIsAuthenticated(false);
-            }
-        });
+                navigate('/success');
+            }).catch(err => console.log(err))
     }
 
     const unauthenticatedNavBar = ()=>{
