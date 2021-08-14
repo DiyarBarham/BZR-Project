@@ -60,7 +60,7 @@ const Chat = (props) => {
     </div>
 			<form onSubmit={onMessageSubmit}  >
 
-        <div style={{display: "flex" , marginLeft: "455px", marginTop:"10px", marginBottom:"10px"}} >
+        <div style={{display: "flex" , marginLeft: "540px", marginTop:"10px", marginBottom:"10px"}} >
 				<div className="name-field">
 					<TextField name="name" onChange={(e) => onTextChange(e)} value={state.name} variant="outlined" label="Name" />
 				</div>

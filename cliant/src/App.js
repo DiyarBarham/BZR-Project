@@ -6,6 +6,7 @@ import Apartment from './components/apartment';
 import Form from './components/Form';
 import SignInOutContainer from './containers';
 import Car from './components/items/Car'
+import Chat from './components/Chat/Chat'
 function App() {
 
   
@@ -18,6 +19,7 @@ function App() {
       <MainForm  path='/fromResidnce' />
       <Car path='/car'/>
       <SignInOutContainer path="/login"/>
+      <Chat path="/chat"/>
     </Router>
   )
 }
