@@ -117,7 +117,7 @@ class Carousel extends React.Component {
                 <div className="tracker">
                     {trackerArray}
                 </div>
-                <a href="#" target="_blank"><button className="viewAll">View All</button></a>
+                <a href="/"  target="_blank"><button className="viewAll">View All</button></a>
             </div>
         )
     }
