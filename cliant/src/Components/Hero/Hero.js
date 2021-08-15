@@ -19,8 +19,8 @@ const Hero = (props) => (
   <div className="automation_WithDesc Hero">
     <br/> <br/> <br/> <br/>  
     
-    <h1 style={{color:"whitesmoke"}} > Welcom in Our websit <span style={{color:"rgb(166 67 72)"}}  > BZR  </span>  </h1>
-    <p style={{color:"white" ,fontSize:"22px"}}> this web site is Made to Help You to find Your Perfect Reseidence easly, <br/> if you need any help feel free to contact us <br/> <br/> <Button style={{backgroundColor:"cadetblue"}}>  Leran More   </Button> </p>
+    <h1 style={{color:"whitesmoke"}} > Welcome to Our website <span style={{color:"rgb(166 67 72)"}}  > BZR  </span>  </h1>
+    <p style={{color:"white" ,fontSize:"22px"}}> this website is Made to Help You find Your Perfect Reseidence easly, <br/> if you need any help feel free to contact us <br/> <br/> <Button style={{backgroundColor:"cadetblue"}}>  Leran More   </Button> </p>
     
     <Card/>
     
